@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nisath — Security Research & Systems Programming</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-brand">
+    <span class="nav-brand-dot"></span>
+    nizx00hex
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#skills">skills</a></li>
+    <li><a href="#github">github</a></li>
+    <li><a href="#projects">projects</a></li>
+    <li><a href="#ctf">ctf</a></li>
+    <li><a href="#certs">certs</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+
+  <div class="nav-actions">
+    <button class="btn-icon" id="themeBtn" title="Toggle theme">☽</button>
+    <a href="#" class="btn-resume" id="resumeBtn">↓ Resume</a>
+    <button class="nav-ham" id="hamBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div class="nav-drawer" id="drawer">
+  <a href="#skills"   onclick="closeDrawer()">skills</a>
+  <a href="#github"   onclick="closeDrawer()">github</a>
+  <a href="#projects" onclick="closeDrawer()">projects</a>
+  <a href="#ctf"      onclick="closeDrawer()">ctf</a>
+  <a href="#certs"    onclick="closeDrawer()">certs</a>
+  <a href="#contact"  onclick="closeDrawer()">contact</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid-line"></div>
+  <div class="hero-glow"></div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">Security Enthusiast · Self-Taught Developer</p>
+
+    <p class="hero-name">// Nizath</p>
+
+    <h1 class="hero-title">
+      Low-Level<br>
+      <span class="stroke">Systems & Security</span>
+      <span class="dim">/ C · Python · Reverse Engineering</span>
+    </h1>
+
+    <p class="hero-desc">
+      Self-learning cybersecurity student focused on understanding how systems work at the lowest level.
+      I work mainly with C, Python, and PHP, and I’m actively building skills in binary exploitation,
+      reverse engineering, and system internals through hands-on labs and CTF practice.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#projects" class="btn-primary">View Projects →</a>
+      <a href="#ctf" class="btn-outline">CTF Writeups</a>
+      <a href="#" class="btn-outline" id="heroResume">↓ Download CV</a>
+    </div>
+
+    <div class="hero-badges">
+      <span class="badge">C Programming</span>
+      <span class="badge">Python Tooling</span>
+      <span class="badge">PHP Web Security</span>
+      <span class="badge">Reverse Engineering</span>
+      <span class="badge">GDB / Debugging</span>
+      <span class="badge">CTF Practice</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stat-bar">
+  <div class="stat-cell reveal">
+    <div class="stat-val"><span class="c">3</span></div>
+    <div class="stat-lbl">Core Languages</div>
+  </div>
+  <div class="stat-cell reveal">
+    <div class="stat-val"><span class="r">5+</span></div>
+    <div class="stat-lbl">Vuln Classes</div>
+  </div>
+  <div class="stat-cell reveal">
+    <div class="stat-val"><span class="g">4</span></div>
+    <div class="stat-lbl">CTF Solves</div>
+  </div>
+  <div class="stat-cell reveal">
+    <div class="stat-val">0x<span class="r">FF</span></div>
+    <div class="stat-lbl">Passion Level</div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<section class="sec" id="skills">
+  <div class="sec-head">
+    <span class="sec-num">01</span>
+    <h2 class="sec-title">Skill Set</h2>
+    <div class="sec-rule"></div>
+  </div>
+
+  <div class="skills-wrap">
+
+    <div class="sk-card reveal">
+      <span class="sk-hex">0x01</span>
+      <div class="sk-title">Binary Exploitation (Basics)</div>
+      <p class="sk-body">
+        Understanding stack-based buffer overflows and control flow behavior in C programs through controlled lab environments.
+      </p>
+      <div class="sk-tags">
+        <span class="sk-tag">Stack BOF</span>
+        <span class="sk-tag">Memory Layout</span>
+      </div>
+    </div>
+
+    <div class="sk-card reveal">
+      <span class="sk-hex">0x02</span>
+      <div class="sk-title">Format String (Intro)</div>
+      <p class="sk-body">
+        Learning how unsafe printf usage can lead to memory leaks and unexpected program behavior in vulnerable programs.
+      </p>
+      <div class="sk-tags">
+        <span class="sk-tag">printf bugs</span>
+        <span class="sk-tag">Memory leaks</span>
+      </div>
+    </div>
+
+    <div class="sk-card reveal">
+      <span class="sk-hex">0x03</span>
+      <div class="sk-title">Reverse Engineering</div>
+      <p class="sk-body">
+        Studying program behavior using GDB and basic disassembly analysis to understand how C code maps to assembly.
+      </p>
+      <div class="sk-tags">
+        <span class="sk-tag">GDB</span>
+        <span class="sk-tag">Assembly Basics</span>
+      </div>
+    </div>
+
+    <div class="sk-card reveal">
+      <span class="sk-hex">0x04</span>
+      <div class="sk-title">C Systems Programming</div>
+      <p class="sk-body">
+        Focused on pointers, memory management, and low-level program behavior through hands-on C practice.
+      </p>
+      <div class="sk-tags">
+        <span class="sk-tag">C</span>
+        <span class="sk-tag">Pointers</span>
+        <span class="sk-tag">Memory</span>
+      </div>
+    </div>
+
+    <div class="sk-card reveal">
+      <span class="sk-hex">0x05</span>
+      <div class="sk-title">Security Scripting</div>
+      <p class="sk-body">
+        Writing Python scripts for automation and basic binary interaction in lab environments.
+      </p>
+      <div class="sk-tags">
+        <span class="sk-tag">Python</span>
+        <span class="sk-tag">Automation</span>
+      </div>
+    </div>
+
+    <div class="sk-card reveal">
+      <span class="sk-hex">0x06</span>
+      <div class="sk-title">Web Security (Basics)</div>
+      <p class="sk-body">
+        Learning common web vulnerabilities such as SQL injection and XSS in educational and controlled environments.
+      </p>
+      <div class="sk-tags">
+        <span class="sk-tag">SQLi</span>
+        <span class="sk-tag">XSS</span>
+        <span class="sk-tag">OWASP Basics</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- GITHUB -->
+<section class="sec sec-alt" id="github">
+  <div class="sec-head">
+    <span class="sec-num">02</span>
+    <h2 class="sec-title">GitHub Activity</h2>
+    <div class="sec-rule"></div>
+  </div>
+  <div class="gh-layout">
+    <div class="gh-card reveal">
+      <div class="gh-card-top">
+        <div class="gh-avi" id="ghAvi">👾</div>
+        <div class="gh-handle" id="ghHandle">nizx00hex</div>
+        <div class="gh-bio-text" id="ghBioTxt">Security researcher · exploit dev · CTF player</div>
+      </div>
+      <div class="gh-nums">
+        <div class="gh-num"><div class="gh-num-val" id="ghR">—</div><div class="gh-num-lbl">Repos</div></div>
+        <div class="gh-num"><div class="gh-num-val" id="ghF">—</div><div class="gh-num-lbl">Followers</div></div>
+        <div class="gh-num"><div class="gh-num-val" id="ghS">—</div><div class="gh-num-lbl">Stars</div></div>
+      </div>
+    </div>
+    <div class="gh-repos-list reveal" id="ghList">
+      <div class="gh-msg">// set GITHUB_USERNAME in the script to load live repos</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="sec" id="projects">
+  <div class="sec-head">
+    <span class="sec-num">03</span>
+    <h2 class="sec-title">Projects</h2>
+    <div class="sec-rule"></div>
+  </div>
+
+  <div class="proj-list">
+
+    <div class="proj-item reveal">
+      <div class="proj-num">01</div>
+      <div>
+        <div class="proj-name">Binary Exploitation Lab</div>
+        <div class="proj-brief">
+          C-based lab for practicing stack buffer overflows and basic control flow redirection in a controlled environment.
+        </div>
+      </div>
+      <div class="proj-pills">
+        <span class="proj-pill lang">C</span>
+        <span class="proj-pill">Pwn / Systems</span>
+      </div>
+    </div>
+
+    <div class="proj-item reveal">
+      <div class="proj-num">02</div>
+      <div>
+        <div class="proj-name">Custom Web Server</div>
+        <div class="proj-brief">
+          Lightweight HTTP server built in C to understand socket programming, HTTP request handling, and basic routing behavior.
+        </div>
+      </div>
+      <div class="proj-pills">
+        <span class="proj-pill lang">C</span>
+        <span class="proj-pill">Networking</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- CTF WRITEUPS -->
+<!-- <section class="sec sec-alt" id="ctf">
+  <div class="sec-head">
+    <span class="sec-num">04</span>
+    <h2 class="sec-title">CTF Writeups</h2>
+    <div class="sec-rule"></div>
+  </div>
+  <div class="ctf-filters">
+    <button class="ctf-btn on" data-f="all">All</button>
+    <button class="ctf-btn" data-f="pwn">Pwn</button>
+    <button class="ctf-btn" data-f="web">Web</button>
+    <button class="ctf-btn" data-f="re">Rev Eng</button>
+  </div>
+  <div class="ctf-grid">
+
+    <div class="ctf-card reveal" data-cat="pwn">
+      <div class="ctf-top"><span class="ctf-evt">picoCTF 2024</span><span class="diff e">Easy</span></div>
+      <div class="ctf-title">Buffer Overflow 1</div>
+      <p class="ctf-body">Classic ret-address overwrite on a 32-bit binary. Used cyclic pattern to find offset at 44 bytes, overwrote EIP with win() address. First clean BOF solve.</p>
+      <div class="ctf-foot"><span class="ctf-cat pwn">Pwn</span><span class="ctf-pts">100 pts</span></div>
+    </div>
+
+    <div class="ctf-card reveal" data-cat="pwn">
+      <div class="ctf-top"><span class="ctf-evt">HTB — Retired</span><span class="diff m">Medium</span></div>
+      <div class="ctf-title">Format String 0</div>
+      <p class="ctf-body">Exploited uncontrolled printf to leak a stack canary, then chained it with a buffer overflow to bypass stack protection and land a shell.</p>
+      <div class="ctf-foot"><span class="ctf-cat pwn">Pwn</span><span class="ctf-pts">250 pts</span></div>
+    </div>
+
+    <div class="ctf-card reveal" data-cat="web">
+      <div class="ctf-top"><span class="ctf-evt">picoCTF 2024</span><span class="diff e">Easy</span></div>
+      <div class="ctf-title">SQL Direct</div>
+      <p class="ctf-body">UNION-based SQLi on a login form. Enumerated tables via information_schema, extracted flag from users table with crafted UNION SELECT payload.</p>
+      <div class="ctf-foot"><span class="ctf-cat web">Web</span><span class="ctf-pts">150 pts</span></div>
+    </div>
+
+    <div class="ctf-card reveal" data-cat="re">
+      <div class="ctf-top"><span class="ctf-evt">angstromCTF</span><span class="diff m">Medium</span></div>
+      <div class="ctf-title">Crackme-0x01</div>
+      <p class="ctf-body">Reverse engineered a stripped binary in Ghidra. Located the serial check routine, identified XOR key in .rodata, scripted key derivation in Python.</p>
+      <div class="ctf-foot"><span class="ctf-cat re">Rev Eng</span><span class="ctf-pts">200 pts</span></div>
+    </div>
+
+  </div>
+</section> -->
+
+<!-- LEARNING NOTES -->
+<section class="sec sec-alt" id="notes">
+  <div class="sec-head">
+    <span class="sec-num">04</span>
+    <h2 class="sec-title">System & Exploitation Notes</h2>
+    <div class="sec-rule"></div>
+  </div>
+
+  <div class="ctf-grid">
+
+    <div class="ctf-card reveal">
+      <div class="ctf-top">
+        <span class="ctf-evt">Binary Exploitation Lab</span>
+        <span class="diff e">Learning</span>
+      </div>
+      <div class="ctf-title">Stack Overflow Practice</div>
+      <p class="ctf-body">
+        Practiced buffer overflow behavior in C programs and studied how return addresses can be affected through memory corruption.
+      </p>
+      <div class="ctf-foot">
+        <span class="ctf-cat pwn">C / Pwn</span>
+        <span class="ctf-pts">Lab Work</span>
+      </div>
+    </div>
+
+    <div class="ctf-card reveal">
+      <div class="ctf-top">
+        <span class="ctf-evt">C Programming Lab</span>
+        <span class="diff e">Learning</span>
+      </div>
+      <div class="ctf-title">Memory & Stack Analysis</div>
+      <p class="ctf-body">
+        Studied stack frames, function calls, and pointer behavior using GDB to understand runtime memory structure in C programs.
+      </p>
+      <div class="ctf-foot">
+        <span class="ctf-cat pwn">Systems</span>
+        <span class="ctf-pts">Lab Work</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section class="sec" id="certs">
+  <div class="sec-head">
+    <span class="sec-num">05</span>
+    <h2 class="sec-title">Achievements</h2>
+    <div class="sec-rule"></div>
+  </div>
+
+  <div class="certs-wrap">
+
+    <div class="cert-card reveal">
+      <span class="cert-status done">✓ Completed</span>
+      <span class="cert-icon">🥷</span>
+      <div class="cert-org">Self Made Ninja Academy</div>
+      <div class="cert-name">LAHTP Legacy Program</div>
+      <p class="cert-desc">
+        Structured learning program covering C programming, Linux fundamentals, networking basics, and system-level thinking.
+      </p>
+      <div class="cert-when">Completed</div>
+    </div>
+
+    <div class="cert-card reveal">
+      <span class="cert-status done">✓ Completed</span>
+      <span class="cert-icon">⚔️</span>
+      <div class="cert-org">Self Made Ninja Academy</div>
+      <div class="cert-name">LAHTP Advanced Program</div>
+      <p class="cert-desc">
+        Advanced learning covering operating systems, networking protocols, cryptography basics, and introductory security concepts.
+      </p>
+      <div class="cert-when">Completed</div>
+    </div>
+
+    <div class="cert-card reveal">
+      <span class="cert-status wip">⟳ In Progress</span>
+      <span class="cert-icon">💀</span>
+      <div class="cert-org">Self Learning</div>
+      <div class="cert-name">Binary Exploitation Lab</div>
+      <p class="cert-desc">
+        Hands-on practice with stack-based vulnerabilities and control flow analysis using C programs and debugging tools.
+      </p>
+      <div class="cert-when">Ongoing</div>
+    </div>
+
+    <div class="cert-card reveal">
+      <span class="cert-status wip">⟳ In Progress</span>
+      <span class="cert-icon">🌐</span>
+      <div class="cert-org">Self Project</div>
+      <div class="cert-name">Custom Web Server</div>
+      <p class="cert-desc">
+        Built a basic HTTP server in C to understand request handling, sockets, and low-level networking concepts.
+      </p>
+      <div class="cert-when">Ongoing</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- LEARNING PATH -->
+<section class="sec sec-alt" id="learning">
+  <div class="sec-head">
+    <span class="sec-num">06</span>
+    <h2 class="sec-title">Learning Path</h2>
+    <div class="sec-rule"></div>
+  </div>
+
+  <div class="tl">
+
+    <div class="tl-item reveal">
+      <div class="tl-dot done"></div>
+      <div class="tl-label done">// completed</div>
+      <div class="tl-title">C Foundations & Memory Model</div>
+      <p class="tl-body">
+        Learned pointer behavior, stack vs heap concepts, and basic compiler-level memory layout through C programming and small experiments.
+      </p>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-dot done"></div>
+      <div class="tl-label done">// completed</div>
+      <div class="tl-title">Stack-Based Vulnerability Basics</div>
+      <p class="tl-body">
+        Studied buffer overflow behavior in controlled C programs and explored how stack memory can be affected by input manipulation.
+      </p>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-dot now"></div>
+      <div class="tl-label now">// in progress</div>
+      <div class="tl-title">Format String & Debugging (GDB)</div>
+      <p class="tl-body">
+        Learning how unsafe format string usage affects memory and improving debugging skills using GDB to analyze program behavior.
+      </p>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-dot next"></div>
+      <div class="tl-label next">// next up</div>
+      <div class="tl-title">Return-Oriented Programming Concepts</div>
+      <p class="tl-body">
+        Studying how program control flow can be influenced at a conceptual level using existing code sequences in memory.
+      </p>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-dot next"></div>
+      <div class="tl-label next">// planned</div>
+      <div class="tl-title">Heap Memory Behavior</div>
+      <p class="tl-body">
+        Learning how dynamic memory allocation works in glibc and how heap structures behave during program execution.
+      </p>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-dot next"></div>
+      <div class="tl-label next">// horizon</div>
+      <div class="tl-title">Advanced Security Practice</div>
+      <p class="tl-body">
+        Expanding toward structured practice in binary analysis, exploitation labs, and security-focused problem solving.
+      </p>
+    </div>
+
+  </div>
+</section>
+<!-- TOOLS -->
+<section class="sec" id="tools">
+  <div class="sec-head">
+    <span class="sec-num">07</span>
+    <h2 class="sec-title">Toolbox</h2>
+    <div class="sec-rule"></div>
+  </div>
+
+  <div class="tools-wrap">
+
+    <div class="tool-card reveal">
+      <div class="tool-name">GDB / PEDA</div>
+      <div class="cert-when">Debugger</div>
+      <p class="tool-desc">Used for runtime analysis of C programs, stack inspection, and debugging memory behavior.</p>
+    </div>
+
+    <div class="tool-card reveal">
+      <div class="tool-name">Python</div>
+      <div class="cert-when">Scripting</div>
+      <p class="tool-desc">Used for automation scripts and basic exploitation tooling in lab environments.</p>
+    </div>
+
+    <div class="tool-card reveal">
+      <div class="tool-name">C / GCC</div>
+      <div class="cert-when">Systems</div>
+      <p class="tool-desc">Core language for systems programming, memory manipulation, and vulnerability practice.</p>
+    </div>
+
+    <div class="tool-card reveal">
+      <div class="tool-name">Ghidra</div>
+      <div class="cert-when">Reverse Engineering</div>
+      <p class="tool-desc">Used for static analysis and understanding compiled binary behavior.</p>
+    </div>
+
+    <div class="tool-card reveal">
+      <div class="tool-name">pwntools</div>
+      <div class="cert-when">Exploit Dev</div>
+      <p class="tool-desc">Python framework used for interacting with vulnerable binaries in controlled labs.</p>
+    </div>
+
+    <div class="tool-card reveal">
+      <div class="tool-name">Burp Suite</div>
+      <div class="cert-when">Web Security</div>
+      <p class="tool-desc">Used for analyzing HTTP requests and testing basic web vulnerabilities in lab apps.</p>
+    </div>
+
+    <div class="tool-card reveal">
+      <div class="tool-name">objdump</div>
+      <div class="cert-when">Binary Analysis</div>
+      <p class="tool-desc">Used for inspecting assembly output and understanding compiled program structure.</p>
+    </div>
+
+    <div class="tool-card reveal">
+      <div class="tool-name">Wireshark</div>
+      <div class="cert-when">Networking</div>
+      <p class="tool-desc">Used for packet inspection and understanding basic network traffic behavior.</p>
+    </div>
+
+    <div class="tool-card reveal">
+      <div class="tool-name">strace / ltrace</div>
+      <div class="cert-when">Tracing</div>
+      <p class="tool-desc">Used for monitoring system calls and library calls during program execution.</p>
+    </div>
+
+    <div class="tool-card reveal">
+      <div class="tool-name">nmap</div>
+      <div class="cert-when">Recon</div>
+      <p class="tool-desc">Used for network scanning and service enumeration in lab environments.</p>
+    </div>
+
+    <div class="tool-card reveal">
+      <div class="tool-name">ROPgadget</div>
+      <div class="cert-when">Exploit Research</div>
+      <p class="tool-desc">Used for identifying useful instruction sequences during controlled exploitation practice.</p>
+    </div>
+
+    <div class="tool-card reveal">
+      <div class="tool-name">Linux CLI</div>
+      <div class="cert-when">Environment</div>
+      <p class="tool-desc">Daily environment for system interaction, debugging, and development work.</p>
+    </div>
+
+  </div>
+</section>
+<!-- CONTACT -->
+<section class="sec sec-alt" id="contact">
+  <div class="sec-head">
+    <span class="sec-num">08</span>
+    <h2 class="sec-title">Contact</h2>
+    <div class="sec-rule"></div>
+  </div>
+
+  <div class="contact-grid">
+
+    <div class="contact-left reveal">
+      <h3>Let's<br><em>Connect</em></h3>
+      <p>
+        Open to collaboration on security projects, lab environments, research discussions, internships, and junior security opportunities.
+      </p>
+
+      <div class="social-links">
+
+        <a href="https://github.com/nizx00hex" target="_blank" class="slink">
+          <div class="slink-left">
+            <div class="slink-icon">🐙</div>
+            <div>
+              <div class="slink-name">GitHub</div>
+              <div class="slink-handle">github.com/nizx00hex</div>
+            </div>
+          </div>
+          <span class="slink-arrow">→</span>
+        </a>
+
+        <a href="https://linkedin.com/in/YOUR_USERNAME" target="_blank" class="slink">
+          <div class="slink-left">
+            <div class="slink-icon">💼</div>
+            <div>
+              <div class="slink-name">LinkedIn</div>
+              <div class="slink-handle">linkedin.com/in/YOUR_USERNAME</div>
+            </div>
+          </div>
+          <span class="slink-arrow">→</span>
+        </a>
+
+        <!-- <a href="https://app.hackthebox.com/profile/YOUR_ID" target="_blank" class="slink">
+          <div class="slink-left">
+            <div class="slink-icon">🟢</div>
+            <div>
+              <div class="slink-name">HackTheBox</div>
+              <div class="slink-handle">HTB Profile</div>
+            </div>
+          </div>
+          <span class="slink-arrow">→</span>
+        </a> -->
+
+        <a href="mailto:you@domain.com" class="slink">
+          <div class="slink-left">
+            <div class="slink-icon">✉️</div>
+            <div>
+              <div class="slink-name">Email</div>
+              <div class="slink-handle">you@domain.com</div>
+            </div>
+          </div>
+          <span class="slink-arrow">→</span>
+        </a>
+
+      </div>
+    </div>
+
+    <div class="cform reveal">
+      <div class="cf-row">
+        <div class="cf-group">
+          <label class="cf-label">Name</label>
+          <input type="text" class="cf-input" id="cfn" placeholder="Your name">
+        </div>
+        <div class="cf-group">
+          <label class="cf-label">Email</label>
+          <input type="email" class="cf-input" id="cfe" placeholder="you@email.com">
+        </div>
+      </div>
+
+      <div class="cf-group">
+        <label class="cf-label">Subject</label>
+        <input type="text" class="cf-input" id="cfs" placeholder="Security collaboration · internship · project">
+      </div>
+
+      <div class="cf-group">
+        <label class="cf-label">Message</label>
+        <textarea class="cf-ta" id="cfm" placeholder="Write your message..."></textarea>
+      </div>
+
+      <button class="cf-submit" id="cfBtn">Send Message →</button>
+      <div class="cf-status" id="cfStatus"></div>
+    </div>
+
+  </div>
+</section>
+<!-- FOOTER -->
+<footer>
+  <div class="foot-copy">© 2026 Alex Reyes — Security Research Portfolio</div>
+  <div class="foot-status"><div class="foot-dot"></div>Available for opportunities</div>
+</footer>
+
+<script url=>
+/* ─────────────────────────────────────
+   CONFIG — set these before publishing
+───────────────────────────────────── */
+const GITHUB_USER = 'nizx00hex';
+const RESUME_PDF  = '';
+
+/* ─────────────────────────────────────
+   THEME
+───────────────────────────────────── */
+const html = document.documentElement;
+const themeBtn = document.getElementById('themeBtn');
+
+let theme = localStorage.getItem('theme') || 'dark';
+html.setAttribute('data-theme', theme);
+themeBtn.textContent = theme === 'dark' ? '☽' : '☀';
+
+themeBtn.addEventListener('click', () => {
+  theme = theme === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', theme);
+  themeBtn.textContent = theme === 'dark' ? '☽' : '☀';
+  localStorage.setItem('theme', theme);
+});
+
+/* ─────────────────────────────────────
+   RESUME
+───────────────────────────────────── */
+[document.getElementById('resumeBtn'), document.getElementById('heroResume')].forEach(btn => {
+  if (!btn) return;
+  if (RESUME_PDF) {
+    btn.href = RESUME_PDF;
+    btn.download = 'Alex_Reyes_Resume.pdf';
+  } else {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      alert('Set RESUME_PDF at the top of the script to your hosted PDF URL.');
+    });
+  }
+});
+
+/* ─────────────────────────────────────
+   MOBILE NAV
+───────────────────────────────────── */
+const ham  = document.getElementById('hamBtn');
+const drawer = document.getElementById('drawer');
+
+ham.addEventListener('click', () => {
+  drawer.classList.toggle('open');
+  const open = drawer.classList.contains('open');
+  ham.children[0].style.transform = open ? 'rotate(45deg) translate(5px,5px)' : '';
+  ham.children[1].style.opacity  = open ? '0' : '';
+  ham.children[2].style.transform = open ? 'rotate(-45deg) translate(5px,-5px)' : '';
+});
+
+function closeDrawer() {
+  drawer.classList.remove('open');
+  ham.children[0].style.transform = '';
+  ham.children[1].style.opacity  = '';
+  ham.children[2].style.transform = '';
+}
+
+/* ─────────────────────────────────────
+   CTF FILTERS
+───────────────────────────────────── */
+document.querySelectorAll('.ctf-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.ctf-btn').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+    const f = btn.dataset.f;
+    document.querySelectorAll('.ctf-card').forEach(c => {
+      c.setAttribute('data-hide', String(f !== 'all' && c.dataset.cat !== f));
+    });
+  });
+});
+
+/* ─────────────────────────────────────
+   SCROLL REVEAL + TOOL BARS
+───────────────────────────────────── */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('in');
+    e.target.querySelectorAll('.tool-fill[data-w]').forEach(b => { b.style.width = b.dataset.w; });
+    io.unobserve(e.target);
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ─────────────────────────────────────
+   GITHUB API
+───────────────────────────────────── */
+async function loadGH(user) {
+  if (!user) return;
+
+  try {
+    const [uRes, repoRes] = await Promise.all([
+      fetch(`https://api.github.com/users/${user}`),
+      fetch(`https://api.github.com/users/${user}/repos?sort=stars&direction=desc&per_page=6`)
+    ]);
+
+    const u = await uRes.json();
+    const repos = await repoRes.json();
+
+    if (u.message) throw new Error(u.message);
+    if (repos.message) throw new Error(repos.message);
+
+    document.getElementById('ghHandle').textContent = u.login;
+    document.getElementById('ghBioTxt').textContent =
+      u.bio || 'Security researcher · exploit dev · CTF player';
+
+    const aviEl = document.getElementById('ghAvi');
+    aviEl.innerHTML = `<img src="${u.avatar_url}" alt="${u.login}">`;
+
+    document.getElementById('ghR').textContent = u.public_repos;
+    document.getElementById('ghF').textContent = u.followers;
+
+    const totalStars = repos.reduce((s, r) => s + (r.stargazers_count || 0), 0);
+    document.getElementById('ghS').textContent = totalStars;
+
+    const list = document.getElementById('ghList');
+
+    if (!repos.length) {
+      list.innerHTML = `<div class="gh-msg">no public repositories found</div>`;
+      return;
+    }
+
+    list.innerHTML = repos.map(r => `
+      <a href="${r.html_url}" target="_blank" class="gh-repo-item">
+        <div>
+          <div class="gh-repo-name">${r.name}</div>
+          <div class="gh-repo-desc">${r.description || 'No description provided.'}</div>
+        </div>
+        <div class="gh-repo-right">
+          <span class="gh-repo-lang">${r.language || '—'}</span>
+          <span class="gh-repo-stars">★ ${r.stargazers_count}</span>
+        </div>
+      </a>
+    `).join('');
+
+  } catch (err) {
+    document.getElementById('ghList').innerHTML =
+      `<div class="gh-msg gh-err">// error: ${err.message}</div>`;
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadGH(GITHUB_USER);
+});
+
+/* ─────────────────────────────────────
+   CONTACT FORM
+───────────────────────────────────── */
+document.getElementById('cfBtn').addEventListener('click', () => {
+  const n = document.getElementById('cfn').value.trim();
+  const e = document.getElementById('cfe').value.trim();
+  const s = document.getElementById('cfs').value.trim();
+  const m = document.getElementById('cfm').value.trim();
+  const st = document.getElementById('cfStatus');
+
+  st.style.display = 'none';
+
+  if (!n || !e || !m) {
+    st.className = 'cf-status err';
+    st.textContent = 'Name, email, and message are required.';
+    st.style.display = 'block'; return;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)) {
+    st.className = 'cf-status err';
+    st.textContent = 'Please enter a valid email address.';
+    st.style.display = 'block'; return;
+  }
+
+  window.location.href = `mailto:you@domain.com?subject=${encodeURIComponent(s || 'Portfolio Contact')}&body=${encodeURIComponent(`From: ${n} <${e}>\n\n${m}`)}`;
+  st.className = 'cf-status ok';
+  st.textContent = 'Opening your mail client…';
+  st.style.display = 'block';
+});
+
+/* ─────────────────────────────────────
+   HERO TYPEWRITER
+───────────────────────────────────── */
+const eye = document.querySelector('.hero-eyebrow');
+const full = eye.textContent;
+eye.textContent = '';
+let i = 0;
+setTimeout(() => {
+  const iv = setInterval(() => { eye.textContent = full.slice(0, ++i); if (i >= full.length) clearInterval(iv); }, 38);
+}, 600);
+</script>
+</body>
+</html>
