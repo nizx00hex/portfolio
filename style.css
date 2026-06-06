@@ -1114,3 +1114,21 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-12px); }
+}
+
+/* Hide logo on mobile, fix eyebrow visibility */
+@media (max-width: 680px) {
+  #hero > div[style] {
+    flex-direction: column;
+  }
+  #hero img[alt="nizxoohex logo"] {
+    display: none;
+  }
+  .hero-eyebrow {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+}
