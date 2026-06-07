@@ -193,7 +193,7 @@ body::after {
 #hero {
   min-height: 100vh;
   display: flex; flex-direction: column; justify-content: center;
-  padding: 100px 40px 60px;
+  padding: 221px 40px 245px;
   position: relative; overflow: hidden;
 }
 
@@ -830,7 +830,7 @@ footer {
 @media (max-width: 680px) {
   /* Fix hero section spacing */
   #hero {
-    padding: 100px 20px 40px;
+    padding: 132px 20px 128px;
     min-height: auto;
   }
   
@@ -1026,7 +1026,7 @@ footer {
   }
   
   #hero {
-    padding: 80px 16px 32px;
+    padding: 85px 14px 64px;
   }
   
   /* Even smaller hero text */
@@ -1121,6 +1121,20 @@ footer {
 
 /* Hide logo on mobile, fix eyebrow visibility */
 @media (max-width: 680px) {
+  #hero > div[style] {
+    flex-direction: column;
+  }
+  #hero img[alt="nizxoohex logo"] {
+    display: none;
+  }
+  .hero-eyebrow {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+}
+
+/* Hide logo on mobile, fix eyebrow visibility */
+@media (max-width: 1128px) {
   #hero > div[style] {
     flex-direction: column;
   }
