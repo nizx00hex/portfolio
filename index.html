@@ -126,6 +126,8 @@
   </div>
 </section>
 
+
+
 <!-- STATS -->
 <div class="stat-bar">
   <div class="stat-cell reveal">
@@ -145,6 +147,95 @@
     <div class="stat-lbl">Passion Level</div>
   </div>
 </div>
+<br>
+<br>
+
+<style>
+
+.ticker-outer{
+  position:relative;
+  background:#c8ff00;
+  border-top:2px solid #a8d800;
+  border-bottom:2px solid #a8d800;
+  overflow:hidden;
+  padding:23px 0;
+}
+.ticker-outer.tilt-down{ transform:rotate(-2deg); }
+
+
+.ticker-track{
+  display:flex;
+  white-space:nowrap;
+  width:max-content;
+}
+.go-left{ animation:goLeft 16s linear infinite; }
+.go-right{animation:goRight 16s linear infinite;}
+@keyframes goLeft{ 
+  from{
+    transform:translateX(0)
+  } to{
+    transform:translateX(-50%)
+  } 
+}
+@keyframes goRight{from{transform:translateX(-50%)} to{transform:translateX(0)} }
+
+.ticker-outer:hover 
+.ticker-track{ 
+  animation-play-state:paused 
+}
+
+.ticker-item{
+  display:inline-flex;align-items:center;gap:14px;
+  padding:0 20px;
+  font-size:14px;font-weight:800;
+  letter-spacing:.14em;color:#111;
+  text-transform:uppercase;
+  font-family:'Courier New',monospace;
+}
+.dot{
+  width:7px;
+  height:7px;
+  background:#111;
+  border-radius:50%;
+  opacity:.4;
+  flex-shrink:0
+}
+
+</style>
+
+<div class="page" id="page">
+  <div class="ticker-outer tilt-down">
+    <div class="ticker-track go-left" id="t1"></div>
+  </div>
+  <!-- <div class="ticker-outer tilt-up">
+    <div class="ticker-track go-right" id="t2"></div>
+  </div> -->
+</div>
+
+<script>
+const items = [
+  'Cyber Security',
+  'C Programming',
+  'Python Development',
+  'Reverse Engineering',
+  'Web Security',
+  'Exploit Research',
+  'Linux Systems',
+  'PHP Development',
+  'Malware Analysis',
+  'Network Security',
+  'Ethical Hacking',
+  'Automation Tools'
+];
+function fill(id){
+  const el=document.getElementById(id);
+  let h='';
+  for(let i=0;i<2;i++) items.forEach(t=>{h+=`<span class="ticker-item"><span class="dot"></span>${t}</span>`;});
+  el.innerHTML=h;
+}
+fill('t1');fill('t2');
+</script>
+
 
 <!-- SKILLS -->
 <section class="sec" id="skills">
